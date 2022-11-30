@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+</head>
+<body>
+<?php
+$item= ['Bike'=>100,'TV'=>200,'Album'=>10,'Book'=>5,'Phone'=>500,'Computer'=>1000];
+asort($item);
+print '1. Cheap Items List'.'<br>';
+foreach($item as $key=>$value){
+    print $key.'<br>';
+}
+
+arsort($item);
+print '<br>';
+print '2. Expensive Items List'.'<br>';
+foreach($item as $key=>$value){
+    print $key.'<br>';
+    $total_price  = $total_price + $value;
+    if($value < 10){
+        $least_product_price = $value;
+    }
+    
+}
+print '<br>3. The full price of all products combined is : '.$total_price;
+
+$new_price = $total_price - $least_product_price;
+print '<br>4. Total price minus price that is under 10 is : '.$new_price;
+?>
+</body>
+</html>
